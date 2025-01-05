@@ -1,0 +1,7 @@
+flutter_native_splash:
+  # Background image for the splash screen
+  background_image: "assets/splash_screen.png"
+
+  # Optionally add a solid background color for Android 12
+  android_12:
+   # background: "#ffffff"  # Use 'background' instead of 'background_color'
