@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rental_car/presentation/onbording/on_boarding_screen.dart';
+import 'package:rental_car/presentation/onbording/ui/on_boarding_screen.dart';
 
 
 class SplashScreen extends StatefulWidget {
