@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:rental_car/presentation/onbording/widgets/page_view_widget.dart';
 import 'package:rental_car/utils/constants/colors.dart';
 import 'package:rental_car/utils/constants/image_strings.dart';
@@ -14,7 +16,7 @@ class OnBoardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
-
+//    final controller  = Get.put(OnBorardingController())
     return Scaffold(
         body: Stack(
       children: [
@@ -44,9 +46,7 @@ class OnBoardingScreen extends StatelessWidget {
           top: TDeviceUtils.getAppBarHeight(),
           right: TSizes.defaultSpace,
           child: TextButton(
-            onPressed: () {
-
-            },
+            onPressed: () {},
             child: const Text(
               TTexts.skip,
             ),
@@ -60,23 +60,27 @@ class OnBoardingScreen extends StatelessWidget {
             controller: PageController(),
             count: 3,
             effect: ExpandingDotsEffect(
-              activeDotColor: dark ? TColors.light :TColors.primary,
+              activeDotColor: dark ? TColors.light : TColors.primary,
               dotHeight: 6,
             ),
           ),
         ),
 
         Positioned(
-          bottom: 4,
-          right: 3,
+          bottom: TDeviceUtils.getBottomNavigationBarHeight() * 0.5,
+          right: TSizes.defaultSpace,
           child: ElevatedButton(
-            onPressed: () {
-
-            },
-            child: const Icon(Icons.arrow_back_ios) ,
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+                shape: CircleBorder(),
+                backgroundColor: dark ? Colors.blue : Colors.indigo),
+            child:  const Icon(
+              size: TSizes.iconMd,
+              Icons.keyboard_arrow_right_rounded,
+              color: Colors.white,
+            ),
           ),
         ),
-
       ],
     ));
   }
