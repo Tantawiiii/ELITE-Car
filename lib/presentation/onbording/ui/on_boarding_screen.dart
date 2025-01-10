@@ -10,18 +10,25 @@ import 'package:rental_car/utils/device/device_utility.dart';
 import 'package:rental_car/utils/helpers/helper_functions.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../controllers/onboarding_controller.dart';
+
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
-//    final controller  = Get.put(OnBorardingController())
+    final controller  = Get.put(OnBoardingController());
+
+
+
     return Scaffold(
         body: Stack(
       children: [
         /// Horizontal pages
         PageView(
+          controller: controller.pageController,
+          onPageChanged: controller.updatePageIndicator,
           children: const [
             PageViewWidget(
               title: TTexts.onBoardingTitle1,
@@ -46,7 +53,7 @@ class OnBoardingScreen extends StatelessWidget {
           top: TDeviceUtils.getAppBarHeight(),
           right: TSizes.defaultSpace,
           child: TextButton(
-            onPressed: () {},
+            onPressed: () => OnBoardingController.instance.skipPage(),
             child: const Text(
               TTexts.skip,
             ),
@@ -57,7 +64,8 @@ class OnBoardingScreen extends StatelessWidget {
           bottom: TDeviceUtils.getBottomNavigationBarHeight() * 1,
           left: TSizes.defaultSpace,
           child: SmoothPageIndicator(
-            controller: PageController(),
+            controller: controller.pageController,
+            onDotClicked: controller.dotNavigationClicked,
             count: 3,
             effect: ExpandingDotsEffect(
               activeDotColor: dark ? TColors.light : TColors.primary,
@@ -70,9 +78,9 @@ class OnBoardingScreen extends StatelessWidget {
           bottom: TDeviceUtils.getBottomNavigationBarHeight() * 0.5,
           right: TSizes.defaultSpace,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () => OnBoardingController.instance.nextPage(),
             style: ElevatedButton.styleFrom(
-                shape: CircleBorder(),
+                shape: const CircleBorder(),
                 backgroundColor: dark ? Colors.blue : Colors.indigo),
             child:  const Icon(
               size: TSizes.iconMd,
