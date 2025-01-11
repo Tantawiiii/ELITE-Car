@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:rental_car/data/model/car_model.dart';
+import 'package:rental_car/presentation/cars/model/car_model.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CarCard extends StatelessWidget {
-  final Car car;
+  final CarModel car;
 
   const CarCard({super.key, required this.car});
 
@@ -12,10 +13,10 @@ class CarCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       padding: const EdgeInsets.all(20),
       child: Column(
-        children: <Widget>[
+        children: [
           Image.asset(
-            "",
-            height: 120,
+            car.image,
+            height: 180,
           ),
           Text(
             car.model,
@@ -27,20 +28,31 @@ class CarCard extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-           Row(
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
                 children: [
                   Row(
                     children: [
-                      Image.asset("gps"),
+                      SvgPicture.asset(
+                        "assets/car_distance.svg",
+                        height: 24,
+                        width: 24,
+                      ),
+                      const SizedBox(width: 4,),
                       Text("${car.distance.toStringAsFixed(0)}km")
                     ],
                   ),
+                  const SizedBox(width: 16,),
                   Row(
                     children: [
-                      Image.asset("gps"),
+                      SvgPicture.asset(
+                        "assets/car_fuelCapacity.svg",
+                        height: 24,
+                        width: 24,
+                      ),
+                      const SizedBox(width: 4,),
                       Text("${car.fuelCapacity.toStringAsFixed(0)}L")
                     ],
                   ),

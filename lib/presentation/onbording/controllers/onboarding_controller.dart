@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:rental_car/presentation/cars/car_list_screen.dart';
+import 'package:rental_car/presentation/cars/ui/car_list_screen.dart';
 
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();
@@ -20,7 +20,7 @@ class OnBoardingController extends GetxController {
   /// update Current Index and jump to next page
   void nextPage() {
     if (currentPageIndex.value ==2){
-      Get.to(const CarListScreen());
+      Get.to( CarListScreen());
     } else{
       int page = currentPageIndex.value + 1;
       pageController.jumpToPage(page);

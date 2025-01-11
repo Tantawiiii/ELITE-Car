@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:rental_car/presentation/onbording/widgets/page_view_widget.dart';
 import 'package:rental_car/utils/constants/colors.dart';
 import 'package:rental_car/utils/constants/image_strings.dart';
