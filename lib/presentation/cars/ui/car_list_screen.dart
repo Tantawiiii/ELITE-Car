@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rental_car/presentation/cars/model/car_model.dart';
 import 'package:rental_car/presentation/cars/widgets/car_card.dart';
+import 'package:rental_car/utils/constants/text_strings.dart';
+
 
 class CarListScreen extends StatelessWidget {
 
@@ -31,9 +33,16 @@ class CarListScreen extends StatelessWidget {
         pricePerHour: 178),
   ];
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(TTexts.appBarTitleCarList),
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
+        centerTitle: true,
+      ),
       body: ListView.builder(
           itemCount: cars.length,
           itemBuilder: (context, index) {
