@@ -20,7 +20,6 @@ class TTexts {
   static const String onBoardingSubTitle2 = "Sport, Limousine, Terrain... whatever your preference is, we have it.";
   static const String onBoardingSubTitle3 = "From Our Doorstep to Yours - Swift, Secure, and Contactless Delivery!";
 
-
   // -- Authentication Forms
   static const String firstName = "First Name";
   static const String lastName = "Last Name";
@@ -65,6 +64,10 @@ class TTexts {
   static const String homeAppbarTitle = "Good day for shopping";
   static const String homeAppbarSubTitle = "Taimoor Sikander";
 
+
+  // -- App Bar
+  static const String appBarTitleCarList = "Choose Your Car";
+  static const String appBarTitleCarDetails = "Car Details";
 
 }
 
