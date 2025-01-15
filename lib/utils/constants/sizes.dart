@@ -20,6 +20,7 @@ class TSizes {
   static const double fontSizeSm = 14.0;
   static const double fontSizeMd = 16.0;
   static const double fontSizeLg = 18.0;
+  static const double fontSizeXl = 24.0;
 
   // Button sizes
   static const double buttonHeight = 18.0;
@@ -45,6 +46,11 @@ class TSizes {
 
   // Divider height
   static const double dividerHeight = 1.0;
+  static const double dividerHeightSl = 8.0;
+  static const double dividerHeightMl = 16.0;
+  static const double dividerHeightLl = 24.0;
+  static const double dividerHeightXl = 32.0;
+  static const double dividerHeightXxl = 40.0;
 
   // Product item dimensions
   static const double productImageSize = 120.0;
@@ -64,6 +70,7 @@ class TSizes {
 
   // Image carousel height
   static const double imageCarouselHeight = 200.0;
+  static const double imageCarouselHeightLg = 300.0;
 
   // Loading indicator size
   static const double loadingIndicatorSize = 36.0;
