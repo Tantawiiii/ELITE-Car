@@ -15,7 +15,7 @@ class CarCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Bounce(
-      onTap: () => Get.to(const CarDetailsScreen()),
+      onTap: () => Get.to( CarDetailsScreen(car: car,)),
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         padding: const EdgeInsets.all(16),
