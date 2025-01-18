@@ -11,9 +11,9 @@ class MoreCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Color(0xff212020),
+        color: const Color(0xff212020),
         borderRadius: BorderRadius.circular(18),
         boxShadow: const [
           BoxShadow(
