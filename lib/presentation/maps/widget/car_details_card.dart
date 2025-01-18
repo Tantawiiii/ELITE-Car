@@ -1,8 +1,12 @@
+import 'package:bounce/bounce.dart';
 import 'package:flutter/material.dart';
 import 'package:rental_car/utils/constants/colors.dart';
 import 'package:rental_car/utils/constants/sizes.dart';
 
-Widget carDetailsCard() {
+import '../../cars/model/car_model.dart';
+import 'feature_icons.dart';
+
+Widget carDetailsCard({required CarModel car}) {
   return SizedBox(
     height: TSizes.imageCarouselHeightLg,
     child: Stack(
@@ -24,54 +28,51 @@ Widget carDetailsCard() {
               ),
             ],
           ),
-          child: const Column(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: TSizes.dividerHeightMl,
-              ),
               Text(
-                'car.model',
-                style: TextStyle(
+                car.model,
+                style: const TextStyle(
                   fontSize: TSizes.fontSizeXl,
                   fontWeight: FontWeight.w800,
                   color: Colors.white,
                 ),
               ),
-              SizedBox(
-                height: TSizes.dividerHeightSl,
+              const SizedBox(
+                height: TSizes.borderRadiusSm,
               ),
               Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.directions_car,
                     color: TColors.white,
                     size: TSizes.iconSm,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   Text(
-                    "> car.distance km",
-                    style: TextStyle(
+                    "> ${car.distance} km",
+                    style: const TextStyle(
                       color: TColors.white,
                       fontSize: TSizes.fontSizeSm,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Icon(
+                  const Icon(
                     Icons.battery_full,
                     color: TColors.white,
                     size: TSizes.iconSm,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   Text(
-                    "car.fuelCapacity",
-                    style: TextStyle(
+                    car.fuelCapacity.toString(),
+                    style: const TextStyle(
                       color: TColors.white,
                       fontSize: TSizes.fontSizeSm,
                     ),
@@ -82,7 +83,7 @@ Widget carDetailsCard() {
           ),
         ),
         Positioned(
-          bottom: 0,
+          bottom: -8,
           left: 0,
           right: 0,
           child: Container(
@@ -104,31 +105,34 @@ Widget carDetailsCard() {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                featureIcons(),
                 const SizedBox(
                   height: TSizes.md,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      '\$ car.pricePerHour',
-                      style: TextStyle(
+                    Text(
+                      '\$ ${car.pricePerHour}/day',
+                      style: const TextStyle(
                         fontSize: TSizes.fontSizeMd,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 100,
                       height: 40,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: TColors.primary,
-                        ),
-                        child: const Text(
-                          "Book Now",
-                          style: TextStyle(
-                            color: Colors.white,
+                      decoration: BoxDecoration(
+                          color: TColors.primary,
+                          borderRadius: BorderRadius.circular(16)),
+                      child: Bounce(
+                        onTap: () {},
+                        child: const Center(
+                          child: Text(
+                            "Book Now",
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
@@ -138,6 +142,11 @@ Widget carDetailsCard() {
               ],
             ),
           ),
+        ),
+        Positioned(
+          top: -18,
+          right: -20,
+          child: Image.asset(car.image, height: 180,),
         ),
       ],
     ),

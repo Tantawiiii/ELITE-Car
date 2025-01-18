@@ -9,25 +9,43 @@ class CarListScreen extends StatelessWidget {
   final List<CarModel> cars = [
     CarModel(
         image: "assets/CAR1.png",
-        model: "Fortuner GR",
+        model: "Fortuner Purple",
         distance: 860,
         fuelCapacity: 50,
         pricePerHour: 178),
     CarModel(
         image: "assets/CAR2.png",
-        model: "Fortuner GR",
+        model: "Fortuner Black",
         distance: 860,
         fuelCapacity: 50,
         pricePerHour: 178),
     CarModel(
         image: "assets/CAR3.png",
-        model: "Fortuner GR",
+        model: "Fortuner Plue",
         distance: 860,
         fuelCapacity: 50,
         pricePerHour: 178),
     CarModel(
         image: "assets/CAR4.png",
-        model: "Fortuner GR",
+        model: "Fortuner Red",
+        distance: 860,
+        fuelCapacity: 50,
+        pricePerHour: 178),
+    CarModel(
+        image: "assets/CAR2.png",
+        model: "Fortuner Black",
+        distance: 860,
+        fuelCapacity: 50,
+        pricePerHour: 178),
+    CarModel(
+        image: "assets/CAR3.png",
+        model: "Fortuner Plue",
+        distance: 860,
+        fuelCapacity: 50,
+        pricePerHour: 178),
+    CarModel(
+        image: "assets/CAR4.png",
+        model: "Fortuner Red",
         distance: 860,
         fuelCapacity: 50,
         pricePerHour: 178),

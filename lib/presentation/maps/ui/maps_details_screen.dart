@@ -1,22 +1,29 @@
+import 'package:bounce/bounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 
 import '../../../utils/constants/sizes.dart';
+import '../../cars/model/car_model.dart';
 import '../widget/car_details_card.dart';
 
 class MapsDetailsScreen extends StatelessWidget {
-  const MapsDetailsScreen({super.key});
 
+  final CarModel car;
+
+  const MapsDetailsScreen({super.key, required this.car});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        leading: const Icon(
-          Icons.arrow_back_ios_new_sharp,
-          size: TSizes.iconLg,
+        leading: Bounce(
+          onTap: ()=> Navigator.pop(context),
+          child: const Icon(
+            Icons.arrow_back_ios_new_sharp,
+            size: TSizes.iconMd,
+          ),
         ),
       ),
       body: Stack(
@@ -28,8 +35,7 @@ class MapsDetailsScreen extends StatelessWidget {
             ),
             children: [
               TileLayer(
-                urlTemplate:
-                    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                urlTemplate: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 subdomains: const ['a', 'b', 'c'],
               ),
             ],
@@ -38,7 +44,7 @@ class MapsDetailsScreen extends StatelessWidget {
             bottom: 0,
             left: 0,
             right: 0,
-            child: carDetailsCard(),
+            child: carDetailsCard(car: car ),
           ),
         ],
       ),

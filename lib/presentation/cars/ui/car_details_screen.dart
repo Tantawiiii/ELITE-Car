@@ -1,6 +1,9 @@
+import 'package:bounce/bounce.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:rental_car/presentation/cars/widgets/car_card.dart';
 import 'package:rental_car/presentation/cars/widgets/more_card.dart';
+import 'package:rental_car/presentation/maps/ui/maps_details_screen.dart';
 
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
@@ -91,21 +94,24 @@ class CarDetailsScreen extends StatelessWidget {
                   width: TSizes.spaceBtwItems,
                 ),
                 Expanded(
-                  child: Container(
-                    height: TSizes.productItemHeight,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(TSizes.iconSm),
-                      image: const DecorationImage(
-                        image: AssetImage("assets/city_maps.jpg"),
-                        fit: BoxFit.cover,
-                      ),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.black12,
-                          blurRadius: TSizes.borderRadiusSm,
-                          spreadRadius: TSizes.borderRadiusSm,
+                  child: Bounce(
+                    onTap: () => Get.to( MapsDetailsScreen(car: car,)),
+                    child: Container(
+                      height: TSizes.productItemHeight,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(TSizes.iconSm),
+                        image: const DecorationImage(
+                          image: AssetImage("assets/city_maps.jpg"),
+                          fit: BoxFit.cover,
                         ),
-                      ],
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: TSizes.borderRadiusSm,
+                            spreadRadius: TSizes.borderRadiusSm,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
