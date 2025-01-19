@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rental_car/presentation/bloc/car_bloc.dart';
+import 'package:rental_car/presentation/bloc/car_state.dart';
 import 'package:rental_car/presentation/cars/widgets/car_card.dart';
 import 'package:rental_car/utils/constants/text_strings.dart';
 
 import '../../../data/model/car_model.dart';
 
-
 class CarListScreen extends StatelessWidget {
-
   final List<CarModel> cars = [
     CarModel(
         image: "assets/CAR1.png",
@@ -52,7 +53,6 @@ class CarListScreen extends StatelessWidget {
         pricePerHour: 178),
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,11 +62,31 @@ class CarListScreen extends StatelessWidget {
         foregroundColor: Colors.black,
         centerTitle: true,
       ),
-      body: ListView.builder(
-          itemCount: cars.length,
-          itemBuilder: (context, index) {
-        return CarCard(car: cars[index]);
-      }),
+      // body: ListView.builder(
+      //     itemCount: cars.length,
+      //     itemBuilder: (context, index) {
+      //   return CarCard(car: cars[index]);
+      // }),
+      body: BlocBuilder<CarBloc, CarState>(
+        builder: (context, state) {
+          if (state is CarLoading) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          } else if (state is CarLoaded) {
+            return ListView.builder(
+                itemCount: state.cars.length,
+                itemBuilder: (context, index) {
+                  return CarCard(car: state.cars[index]);
+                });
+          } else if (state is CarError) {
+            return Center(
+              child: Text("error: ${state.error}"),
+            );
+          }
+          return Container();
+        },
+      ),
     );
   }
 }
