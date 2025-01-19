@@ -17,8 +17,9 @@ class CarModel {
     return CarModel(
         image: map["image"],
         model: map["model"],
-        distance: map["distance"],
-        fuelCapacity: map["fuelCapacity"],
-        pricePerHour: map["pricePerHour"]);
+        distance: (map["distance"] as num).toDouble(),
+    fuelCapacity: (map["fuelCapacity"] as num).toDouble(),
+    pricePerHour: (map["pricePerHour"] as num).toDouble(),
+    );
   }
 }

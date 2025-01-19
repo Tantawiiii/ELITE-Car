@@ -13,7 +13,8 @@ class FetchCarsApiDataSource {
     var snapshot =
     await firestore.collection('cars').get();
 
-    return snapshot.docs.map((doc) => CarModel.fromMap(doc.data()) ).toList();
+    return snapshot.docs.map((doc)
+    => CarModel.fromMap(doc.data()) ).toList();
 
   }
 
