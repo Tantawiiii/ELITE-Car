@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:rental_car/presentation/cars/model/car_model.dart';
 import 'package:rental_car/presentation/cars/widgets/car_card.dart';
 import 'package:rental_car/utils/constants/text_strings.dart';
+
+import '../../../data/model/car_model.dart';
 
 
 class CarListScreen extends StatelessWidget {
