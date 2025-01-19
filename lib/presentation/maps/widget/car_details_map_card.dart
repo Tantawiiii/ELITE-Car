@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:rental_car/utils/constants/colors.dart';
 import 'package:rental_car/utils/constants/sizes.dart';
 
-import '../../cars/model/car_model.dart';
+import '../../../data/model/car_model.dart';
 import 'feature_icons.dart';
 
-Widget carDetailsCard({required CarModel car}) {
+Widget carDetailsMapCard({required CarModel car}) {
   return SizedBox(
     height: TSizes.imageCarouselHeightLg,
     child: Stack(

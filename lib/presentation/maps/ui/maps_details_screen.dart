@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 
+import '../../../data/model/car_model.dart';
 import '../../../utils/constants/sizes.dart';
-import '../../cars/model/car_model.dart';
-import '../widget/car_details_card.dart';
+import '../widget/car_details_map_card.dart';
 
 class MapsDetailsScreen extends StatelessWidget {
 
@@ -44,7 +44,7 @@ class MapsDetailsScreen extends StatelessWidget {
             bottom: 0,
             left: 0,
             right: 0,
-            child: carDetailsCard(car: car ),
+            child: carDetailsMapCard(car: car ),
           ),
         ],
       ),

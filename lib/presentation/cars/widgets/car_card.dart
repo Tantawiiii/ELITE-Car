@@ -1,10 +1,11 @@
 import 'package:bounce/bounce.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:rental_car/presentation/cars/model/car_model.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rental_car/presentation/cars/ui/car_details_screen.dart';
 import 'package:rental_car/utils/constants/sizes.dart';
+
+import '../../../data/model/car_model.dart';
 
 
 class CarCard extends StatelessWidget {
