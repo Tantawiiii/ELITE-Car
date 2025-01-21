@@ -14,4 +14,4 @@
 
 ## Screens:- 
 <img src="images/img1.png" width="160" height="360"> <img src="images/img2.png" width="160" height="360"> <img src="images/img3.png" width="160" height="360"> 
-<img src="images/img4.png" width="160" height="360"> <img src="images/img5.png" width="160" height="360"> <img src="images/img6.png" width="160" height="360"> 
+<img src="images/img4.png" width="160" height="360"> <img src="images/img5.png" width="160" height="360"> <img src="images/img6.png" width="160" height="360"> <img src="images/img7.png" width="160" height="360"> 
