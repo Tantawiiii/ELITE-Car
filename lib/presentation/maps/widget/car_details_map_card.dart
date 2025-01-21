@@ -146,7 +146,7 @@ Widget carDetailsMapCard({required CarModel car}) {
         Positioned(
           top: -18,
           right: -20,
-          child: Image.asset(car.image, height: 180,),
+          child: Image.network(car.image, height: 180,),
         ),
       ],
     ),

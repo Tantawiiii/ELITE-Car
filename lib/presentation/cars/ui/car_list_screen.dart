@@ -46,7 +46,7 @@ class CarListScreen extends StatelessWidget {
         fuelCapacity: 50,
         pricePerHour: 178),
     CarModel(
-        image: "assets/CAR4.png",
+       image: "assets/CAR4.png",
         model: "Fortuner Red",
         distance: 860,
         fuelCapacity: 50,
