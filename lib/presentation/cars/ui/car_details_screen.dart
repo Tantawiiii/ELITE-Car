@@ -64,7 +64,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen>
         children: [
           CarCard(
             car: CarModel(
-                image: widget.car.image,
+             image: widget.car.image,
                 model: widget.car.model,
                 distance: widget.car.distance,
                 fuelCapacity: widget.car.fuelCapacity,

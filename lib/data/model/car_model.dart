@@ -1,7 +1,6 @@
 class CarModel {
   final String model;
   final String image;
-
   final double distance;
   final double fuelCapacity;
   final double pricePerHour;
